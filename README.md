@@ -23,6 +23,7 @@ https://practicesoftwaretesting.com/
 - **Playwright API Testing**
 - **Playwright Fixtures**
 - **Zod**
+- **infisical**
 - **JSON Test Data**
 - **Git / GitHub**
 - **Playwright HTML Reporter**
