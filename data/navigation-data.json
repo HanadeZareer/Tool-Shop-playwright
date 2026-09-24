@@ -1,0 +1,82 @@
+{
+  "categories": [
+    {
+      "name": "hand-tools",
+      "locator": "nav-hand-tools"
+    },
+    {
+      "name": "power-tools",
+      "locator": "nav-power-tools"
+    },
+    {
+      "name": "other",
+      "locator": "nav-other"
+    },
+    {
+      "name": "special-tools",
+      "locator": "nav-special-tools"
+    },
+    {
+      "name": "rentals",
+      "locator": "nav-rentals"
+    }
+  ],
+
+  "userMenu": [
+    {
+      "name": "account",
+      "locator": "nav-my-account"
+    },
+    {
+      "name": "favorites",
+      "locator": "nav-my-favorites"
+    },
+    {
+      "name": "profile",
+      "locator": "nav-my-profile"
+    },
+    {
+      "name": "invoices",
+      "locator": "nav-my-invoices"
+    },
+    {
+      "name": "messages",
+      "locator": "nav-my-messages"
+    },
+    {
+      "name": "sign-out",
+      "locator": "nav-sign-out"
+    }
+  ],
+
+  "languages": [
+    {
+      "name": "de",
+      "locator": "lang-de"
+    },
+    {
+      "name": "el",
+      "locator": "lang-el"
+    },
+    {
+      "name": "en",
+      "locator": "lang-en"
+    },
+    {
+      "name": "es",
+      "locator": "lang-es"
+    },
+    {
+      "name": "fr",
+      "locator": "lang-fr"
+    },
+    {
+      "name": "nl",
+      "locator": "lang-nl"
+    },
+    {
+      "name": "tr",
+      "locator": "lang-tr"
+    }
+  ]
+}

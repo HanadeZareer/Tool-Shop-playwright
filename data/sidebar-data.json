@@ -1,0 +1,120 @@
+{
+  "sorts": [
+    {
+      "name": "name-asc",
+      "value": "name,asc"
+    },
+    {
+      "name": "name-desc",
+      "value": "name,desc"
+    },
+    {
+      "name": "price-high-low",
+      "value": "price,desc"
+    },
+    {
+      "name": "price-low-high",
+      "value": "price,asc"
+    },
+    {
+      "name": "co2-a-e",
+      "value": "co2_rating,asc"
+    },
+    {
+      "name": "co2-e-a",
+      "value": "co2_rating,desc"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Hand Tools",
+      "id": 1
+    },
+    {
+      "name": "Power Tools",
+      "id": 2
+    },
+    {
+      "name": "Hammer",
+      "id": 3
+    },
+    {
+      "name": "Hand Saw",
+      "id": 4
+    },
+    {
+      "name": "Wrench",
+      "id": 5
+    },
+    {
+      "name": "Screwdriver",
+      "id": 6
+    },
+    {
+      "name": "Pliers",
+      "id": 7
+    },
+    {
+      "name": "Grinder",
+      "id": 8
+    },
+    {
+      "name": "Sander",
+      "id": 9
+    },
+    {
+      "name": "Saw",
+      "id": 10
+    },
+    {
+      "name": "Drill",
+      "id": 11
+    },
+    {
+      "name": "Other",
+      "id": 12
+    }
+  ],
+  "brands": [
+    {
+      "name": "Brand name 1",
+      "id": 1
+    },
+    {
+      "name": "Brand name 2",
+      "id": 2
+    },
+    {
+      "name": "Brand name 3",
+      "id": 3
+    },
+    {
+      "name": "Brand name 4",
+      "id": 4
+    },
+    {
+      "name": "Brand name 5",
+      "id": 5
+    },
+    {
+      "name": "Brand name 6",
+      "id": 6
+    },
+    {
+      "name": "Brand name 7",
+      "id": 7
+    },
+    {
+      "name": "Brand name 8",
+      "id": 8
+    },
+    {
+      "name": "Brand name 9",
+      "id": 9
+    },
+    {
+      "name": "Brand name 10",
+      "id": 10
+    }
+  ]
+}

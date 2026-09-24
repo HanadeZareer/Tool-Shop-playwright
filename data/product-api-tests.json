@@ -1,0 +1,555 @@
+{
+  "getProductsTests": [
+    {
+      "testCase": "TC_API_001",
+      "description": "Retrieve all products without filters",
+      "type": "positive",
+      "params": {},
+      "expectedStatus": 200,
+      "expectedProducts": true
+    },
+
+    {
+      "testCase": "TC_API_002",
+      "description": "Sort products by price ascending",
+      "type": "positive",
+      "params": {
+        "sort": "price,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,asc"
+    },
+    {
+      "testCase": "TC_API_003",
+      "description": "Sort products by price descending",
+      "type": "positive",
+      "params": {
+        "sort": "price,desc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,desc"
+    },
+    {
+      "testCase": "TC_API_004",
+      "description": "Sort products by name ascending",
+      "type": "positive",
+      "params": {
+        "sort": "name,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "name,asc"
+    },
+    {
+      "testCase": "TC_API_005",
+      "description": "Sort products by name descending",
+      "type": "positive",
+      "params": {
+        "sort": "name,desc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "name,desc"
+    },
+    {
+      "testCase": "TC_API_006",
+      "description": "Sort products by CO2 rating ascending",
+      "type": "exploratory",
+      "params": {
+        "sort": "co2_rating,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "co2_rating,asc"
+    },
+    {
+      "testCase": "TC_API_007",
+      "description": "Sort products by CO2 rating descending",
+      "type": "exploratory",
+      "params": {
+        "sort": "co2_rating,desc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "co2_rating,desc"
+    },
+
+    {
+      "testCase": "TC_API_008",
+      "description": "Filter products by valid category",
+      "type": "positive",
+      "params": {
+        "by_category": 3
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedFilter": "category"
+    },
+    {
+      "testCase": "TC_API_009",
+      "description": "Filter products by another valid category",
+      "type": "positive",
+      "params": {
+        "by_category": 4
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedFilter": "category"
+    },
+    {
+      "testCase": "TC_API_010",
+      "description": "Filter products by another valid category",
+      "type": "positive",
+      "params": {
+        "by_category": 5
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedFilter": "category"
+    },
+
+    {
+      "testCase": "TC_API_011",
+      "description": "Filter products by valid brand",
+      "type": "positive",
+      "params": {
+        "by_brand": 1
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedFilter": "brand"
+    },
+    {
+      "testCase": "TC_API_012",
+      "description": "Filter products by another valid brand",
+      "type": "positive",
+      "params": {
+        "by_brand": 2
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedFilter": "brand"
+    },
+
+    {
+      "testCase": "TC_API_013",
+      "description": "Filter products by minimum price range",
+      "type": "positive",
+      "params": {
+        "between": "price,0,10"
+      },
+      "expectedStatus": 200,
+      "expectedPriceRange": {
+        "min": 0,
+        "max": 10
+      }
+    },
+    {
+      "testCase": "TC_API_014",
+      "description": "Filter products by low price range",
+      "type": "positive",
+      "params": {
+        "between": "price,10,30"
+      },
+      "expectedStatus": 200,
+      "expectedPriceRange": {
+        "min": 10,
+        "max": 30
+      }
+    },
+    {
+      "testCase": "TC_API_015",
+      "description": "Filter products by medium price range",
+      "type": "positive",
+      "params": {
+        "between": "price,50,100"
+      },
+      "expectedStatus": 200,
+      "expectedPriceRange": {
+        "min": 50,
+        "max": 100
+      }
+    },
+    {
+      "testCase": "TC_API_016",
+      "description": "Filter products by high price range",
+      "type": "positive",
+      "params": {
+        "between": "price,100,150"
+      },
+      "expectedStatus": 200,
+      "expectedPriceRange": {
+        "min": 100,
+        "max": 150
+      }
+    },
+    {
+      "testCase": "TC_API_017",
+      "description": "Filter products using the maximum available price range",
+      "type": "positive",
+      "params": {
+        "between": "price,0,200"
+      },
+      "expectedStatus": 200,
+      "expectedPriceRange": {
+        "min": 0,
+        "max": 200
+      }
+    },
+
+    {
+      "testCase": "TC_API_018",
+      "description": "Return no products for an empty high price range",
+      "type": "positive",
+      "params": {
+        "between": "price,188,200"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": false,
+      "expectedEmptyState": "There are no products found."
+    },
+
+    {
+      "testCase": "TC_API_019",
+      "description": "Filter by category and sort by price ascending",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "sort": "price,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,asc"
+    },
+    {
+      "testCase": "TC_API_020",
+      "description": "Filter by category and sort by price descending",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "sort": "price,desc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,desc"
+    },
+    {
+      "testCase": "TC_API_021",
+      "description": "Filter by category and sort by name ascending",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "sort": "name,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "name,asc"
+    },
+    {
+      "testCase": "TC_API_022",
+      "description": "Filter by category and sort by name descending",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "sort": "name,desc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "name,desc"
+    },
+
+    {
+      "testCase": "TC_API_023",
+      "description": "Filter by brand and sort by price ascending",
+      "type": "positive",
+      "params": {
+        "by_brand": 1,
+        "sort": "price,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,asc"
+    },
+    {
+      "testCase": "TC_API_024",
+      "description": "Filter by brand and sort by price descending",
+      "type": "positive",
+      "params": {
+        "by_brand": 1,
+        "sort": "price,desc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,desc"
+    },
+    {
+      "testCase": "TC_API_025",
+      "description": "Filter by brand and sort by name ascending",
+      "type": "positive",
+      "params": {
+        "by_brand": 1,
+        "sort": "name,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "name,asc"
+    },
+    {
+      "testCase": "TC_API_026",
+      "description": "Filter by brand and sort by name descending",
+      "type": "positive",
+      "params": {
+        "by_brand": 1,
+        "sort": "name,desc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "name,desc"
+    },
+
+    {
+      "testCase": "TC_API_027",
+      "description": "Filter by category and brand",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "by_brand": 1
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true
+    },
+    {
+      "testCase": "TC_API_028",
+      "description": "Filter by category, brand and sort by price",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "by_brand": 1,
+        "sort": "price,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,asc"
+    },
+    {
+      "testCase": "TC_API_029",
+      "description": "Filter by category, brand and sort by name",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "by_brand": 1,
+        "sort": "name,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "name,asc"
+    },
+
+    {
+      "testCase": "TC_API_030",
+      "description": "Filter by category and price range",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "between": "price,10,50"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedPriceRange": {
+        "min": 10,
+        "max": 50
+      }
+    },
+    {
+      "testCase": "TC_API_031",
+      "description": "Filter by brand and price range",
+      "type": "positive",
+      "params": {
+        "by_brand": 1,
+        "between": "price,10,50"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedPriceRange": {
+        "min": 10,
+        "max": 50
+      }
+    },
+    {
+      "testCase": "TC_API_032",
+      "description": "Filter by category, price range and sort by price",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "between": "price,10,50",
+        "sort": "price,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,asc",
+      "expectedPriceRange": {
+        "min": 10,
+        "max": 50
+      }
+    },
+    {
+      "testCase": "TC_API_033",
+      "description": "Filter by brand, price range and sort by price",
+      "type": "positive",
+      "params": {
+        "by_brand": 1,
+        "between": "price,10,50",
+        "sort": "price,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,asc",
+      "expectedPriceRange": {
+        "min": 10,
+        "max": 50
+      }
+    },
+
+    {
+      "testCase": "TC_API_034",
+      "description": "Filter by category and sort by CO2 rating",
+      "type": "exploratory",
+      "params": {
+        "by_category": 1,
+        "sort": "co2_rating,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "co2_rating,asc"
+    },
+    {
+      "testCase": "TC_API_035",
+      "description": "Filter by brand and sort by CO2 rating",
+      "type": "exploratory",
+      "params": {
+        "by_brand": 1,
+        "sort": "co2_rating,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "co2_rating,asc"
+    },
+    {
+      "testCase": "TC_API_036",
+      "description": "Filter by price range and sort by CO2 rating",
+      "type": "exploratory",
+      "params": {
+        "between": "price,10,50",
+        "sort": "co2_rating,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "co2_rating,asc"
+    },
+
+    {
+      "testCase": "TC_API_037",
+      "description": "Apply category, brand, price range and price sorting",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "by_brand": 1,
+        "between": "price,10,50",
+        "sort": "price,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "price,asc",
+      "expectedPriceRange": {
+        "min": 10,
+        "max": 50
+      }
+    },
+    {
+      "testCase": "TC_API_038",
+      "description": "Apply category, brand, price range and name sorting",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "by_brand": 1,
+        "between": "price,10,50",
+        "sort": "name,asc"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": true,
+      "expectedSort": "name,asc",
+      "expectedPriceRange": {
+        "min": 10,
+        "max": 50
+      }
+    },
+
+    {
+      "testCase": "TC_API_039",
+      "description": "Apply category and price range that returns no products",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "between": "price,188,200"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": false,
+      "expectedEmptyState": "There are no products found."
+    },
+    {
+      "testCase": "TC_API_040",
+      "description": "Apply brand and price range that returns no products",
+      "type": "positive",
+      "params": {
+        "by_brand": 1,
+        "between": "price,188,200"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": false,
+      "expectedEmptyState": "There are no products found."
+    },
+    {
+      "testCase": "TC_API_041",
+      "description": "Apply category, brand and price range that returns no products",
+      "type": "positive",
+      "params": {
+        "by_category": 1,
+        "by_brand": 1,
+        "between": "price,188,200"
+      },
+      "expectedStatus": 200,
+      "expectedProducts": false,
+      "expectedEmptyState": "There are no products found."
+    },
+
+    {
+      "testCase": "TC_API_042",
+      "description": "Verify zero-width price range",
+      "type": "boundary",
+      "params": {
+        "between": "price,50,50"
+      },
+      "expectedStatus": 200
+    },
+    {
+      "testCase": "TC_API_043",
+      "description": "Verify minimum price boundary",
+      "type": "boundary",
+      "params": {
+        "between": "price,0,1"
+      },
+      "expectedStatus": 200
+    },
+    {
+      "testCase": "TC_API_044",
+      "description": "Verify maximum price boundary",
+      "type": "boundary",
+      "params": {
+        "between": "price,199,200"
+      },
+      "expectedStatus": 200
+    }
+  ]
+}
