@@ -24,7 +24,6 @@ https://practicesoftwaretesting.com/
 - **Playwright Fixtures**
 - **Zod**
 - **JSON Test Data**
-- **Infisical**
 - **Git / GitHub**
 - **Playwright HTML Reporter**
 - **Spec-Doc Reporter**
